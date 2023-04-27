@@ -1,0 +1,53 @@
+@startuml universidade
+/'Casos de usos do sistema de uma universidade'/
+left to right direction
+actor Estudante as c
+package Profissional {
+  actor professor as g
+  actor cordenador as ç
+  actor reitor as h
+  actor funcionarios as j
+  actor faxineiro as k
+  actor vigilante as label
+  actor financeiro as p
+  
+}
+package Universidade {
+  usecase "Ministrar aula" as UC1
+  usecase "Assistir Aula" as UC2
+  usecase "Orientar matricula" as UC3
+  usecase "Dar administrar curso" as UC4
+  usecase "Adminsitrar universidade" as UC5
+  usecase "Representar universidade" as UC6
+  usecase "Prestar serviço" as UC7
+  usecase "Atender a universidade" as UC8
+  usecase "Gerenciar receitas e despesas" as UC9
+  usecase "Pagar" as UC10
+  usecase "Receber" as UC11    
+}
+(UC2) .> (UC1) : include
+Estudante --|> UC2
+Estudante --|> UC10
+UC10 -- UC11
+UC10 --|> UC9
+UC9 -- financeiro
+Professor -- UC1
+funcionario -- UC10
+vigilante --|> funcionario
+faxineiro --|> funcionario
+financeiro --|> funcionario
+coordenador -- UC3
+coordenador -- UC4
+coordenador --|> professor
+reitor --|> professor
+reitor -- UC5
+reitor -- UC6
+UC8 --|> UC6
+funcionario -- UC7
+professor -- UC11
+UC8 --|> UC7
+vigilante -- UC12
+funcionario -- UC11
+
+
+@enduml
