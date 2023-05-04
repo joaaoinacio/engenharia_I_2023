@@ -1,0 +1,30 @@
+@startuml Delicias_Gourmet
+left to right direction
+package Fabrica {
+  actor "Gerente de compras" as a
+  actor "Supervisor de estoque" as b
+  actor "Coordenação de produção" as c
+  actor "Analista de qualidade" as d
+  actor "Gerente de vendas" as f
+  actor "Vendedor" as e
+  actor "Almoxarifado" as g
+  actor "Fornecedores" as h
+
+}
+package Universidade {
+  usecase "adquirir os ingredientes e os materiais necessários" as UC1
+  usecase "gerenciar o armazenamento dos materiais e garantir que todos os itens estejam devidamente organizados e estocados" as UC2
+  usecase "garantir a qualidade dos produtos e negocia os melhores preços" as UC3
+  usecase "Verificar se tudo está em conformidade com os pedidos feitos" as UC4
+  usecase "coordena a utilização dos ingredientes e materiais no processo de fabricação"
+  usecase "garantir que os itens sejam entregues no momento certo e na quantidade adequada"
+
+  (UC1) .> (UC2) : include
+  (UC3) .> (UC2) : <<extends>>
+}
+sa -- UC4
+c -- UC1
+c -- UC2
+c -- UC3
+sa <|-- ch  
+@enduml
