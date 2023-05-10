@@ -8,4 +8,7 @@
 <h4>🛠️ Construído com</h4>
 <h>PUML - MD - VSCODE - GIT</h>
 <h5>✒️ Autor</h5>
-<p> *[João Inácio C. Ruguzzoni]</p>
+<p>João Inácio C. Ruguzzoni</p>
+<h6>📄 Licença</h6>
+<p>Este projeto está sob a licença (sua licença) - veja o arquivo LICENSE.md para detalhes.</p>
+
