@@ -1,30 +1,51 @@
-@startuml Delicias_Gourmet
+@startuml
+
 left to right direction
-package Fabrica {
-  actor "Gerente de compras" as a
-  actor "Supervisor de estoque" as b
-  actor "Coordenação de produção" as c
-  actor "Analista de qualidade" as d
-  actor "Gerente de vendas" as f
-  actor "Vendedor" as e
-  actor "Almoxarifado" as g
-  actor "Fornecedores" as h
 
-}
-package Universidade {
-  usecase "adquirir os ingredientes e os materiais necessários" as UC1
-  usecase "gerenciar o armazenamento dos materiais e garantir que todos os itens estejam devidamente organizados e estocados" as UC2
-  usecase "garantir a qualidade dos produtos e negocia os melhores preços" as UC3
-  usecase "Verificar se tudo está em conformidade com os pedidos feitos" as UC4
-  usecase "coordena a utilização dos ingredientes e materiais no processo de fabricação"
-  usecase "garantir que os itens sejam entregues no momento certo e na quantidade adequada"
+    actor "Gerente de Compras" as gc
+    actor "Supervisor de Estoque" as sde
+    actor "Coordenador de Produção" as cp
+    actor "Analista de Qualidade" as aq 
+    actor "Gerente de Vendas" as gv
+    actor Vendedor as vd 
 
-  (UC1) .> (UC2) : include
-  (UC3) .> (UC2) : <<extends>>
+
+rectangle "Caso de uso" {
+   usecase "Organizar Materiais" as UC1  
+    usecase "Gerenciar Materiais" as UC2
+    usecase "Supervisionar Estoque" as UC3
+    usecase "Receber Comissão" as UC4
+    usecase "Vender Produtos" as UC5
+    usecase "Controlar Vendas" as UC6
+    usecase "Comprar Materiais" as UC7
+    usecase "Conferir e Verificar Materiais" as UC8
+    usecase "Garantir a entrega dos Materiais" as UC9
+    usecase "Planejar a utilização dos Materiais" as UC10
+    usecase "Monitorar o Processo de Produção" as UC11
+    usecase "Conduzir Inspeções Regulares" as UC12
+    usecase "Coordenar a entrega dos Produtos" as UC13
+    usecase "Registrar todas as Vendas" as UC14 
+    usecase "Formar equipe de Vendas" as UC15
+    usecase "Cumprir Cotas" as UC16 
 }
-sa -- UC4
-c -- UC1
-c -- UC2
-c -- UC3
-sa <|-- ch  
-@enduml
+    vd -- UC4
+    vd -- UC16 
+    vd -- UC5 
+    gv -- UC6 
+    gv -- UC15 
+    (UC4) .> (UC5) : <<include>> 
+    sde -- UC2 
+    gv --|> vd 
+    gc -- UC7 
+    gc --|> sde 
+    sde -- UC8
+    cp -- UC10
+    aq -- UC11
+    aq -- UC12 
+    vd -- UC13
+    vd -- UC14 
+    sde -- UC1 
+    cp -- UC9 
+    sde -- UC3 
+
+@enduml 
