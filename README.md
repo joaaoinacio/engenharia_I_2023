@@ -5,4 +5,7 @@
 <p>Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local para fins de desenvolvimento e teste.</p>
 <h3>📋 Pré-requisitos</h3>
 <p>Apenas baixar os arquivos no GIT</p>
-
+<h4>🛠️ Construído com</h4>
+<h>PUML - MD - VSCODE - GIT</h>
+<h5>✒️ Autor</h5>
+<p> *[João Inácio C. Ruguzzoni]</p>
